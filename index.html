@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    span {
+        background-color: yellow;
+    }
+</style>
+<body>
+<input id="inp">
+<div id="text">
+Beatae consequuntur expedita fugit illum inventore ipsam laboriosam molestiae rerum veniam voluptatem? Accusamus
+    laboriosam, sapiente? A assumenda autem eos expedita fuga, incidunt magni praesentium provident repellendus sapiente
+    similique unde, velit?
+</div>
+
+<script>
+    let inp  = document.getElementById('inp');
+    let text  = document.getElementById('text');
+    inp.addEventListener('keyup', function () {
+        text.innerHTML = text.innerHTML.split('<span>').join('');
+        text.innerHTML = text.innerHTML.split('<span/>').join('');
+        text.innerHTML = text.innerHTML.split(inp.value).join('<span>' + inp.value + '</span>')
+
+    })
+</script>
+
+</body>
+</html>
